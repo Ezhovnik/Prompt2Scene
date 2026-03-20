@@ -14,7 +14,7 @@
 ## 📁 Структура репозитория
 ```
 ├── README.md # Этот файл
-├── finetune_qwen_manim.ipynb # Jupyter-блокнот
+├── Notebook.ipynb # Jupyter-блокнот
 ├── english_data12.csv # Обучающие данные (пары «запрос → код»)
 └── tune_model_english_qwen_coder.zip # Готовая доработанная модель (распакуйте для использования)
 ```
@@ -37,7 +37,7 @@ This project was developed as part of a **project-based learning activity** at *
 ## 📁 Repository Structure
 ```
 ├── README.md # This file
-├── finetune_qwen_manim.ipynb # Jupyter notebook
+├── Notebook.ipynb # Jupyter notebook
 ├── english_data12.csv # Training data (prompt → code pairs)
 └── tune_model_english_qwen_coder.zip # Fine-tuned model (unzip to use)
 ```
