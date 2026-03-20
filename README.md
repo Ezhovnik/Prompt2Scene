@@ -1,7 +1,7 @@
 # Prompt2Scene: Генерация Manim-анимации по текстовому описанию
 
 Этот репозиторий содержит доработанную (fine-tuned) версию **[Qwen2.5-Coder-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct)**, которая преобразует текстовые описания в исполняемый код **Manim**.  
-Модель доработана на наборе данных `english_data12.csv`, который был создан путём объединения двух открытых источников (один с [Hugging Face](https://huggingface.co/datasets/shekhar98/manim_community_and_documentation_code), другой с [Kaggle](https://www.kaggle.com/datasets/ravidussilva/manim-sft/data)) и дополнен вручную дополнительными примерами.
+Модель дообучена на наборе данных `english_data12.csv`, который был создан путём объединения двух открытых источников (один с [Hugging Face](https://huggingface.co/datasets/shekhar98/manim_community_and_documentation_code), другой с [Kaggle](https://www.kaggle.com/datasets/ravidussilva/manim-sft/data)) и дополнен вручную дополнительными примерами.
 
 ## 👥 Команда проекта
 
