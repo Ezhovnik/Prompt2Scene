@@ -8,8 +8,8 @@
 Этот проект был выполнен в рамках **проектной деятельности** в **Школе № 179 г. Москвы**.
 
 **Авторы:**
-- **Георгий Харитонов**, 10Д класс
-- **Анна Васильева**, 10Д класс
+- **[Георгий Харитонов](https://github.com/Ezhovnik)**, 10Д класс
+- **[Анна Васильева](https://github.com/179Ann)**, 10Д класс
 
 ## 📁 Структура репозитория
 ```
@@ -31,8 +31,8 @@ The model is fine-tuned on `english_data12.csv`, a dataset constructed by mergin
 This project was developed as part of a **project-based learning activity** at **Moscow School No. 179**.
 
 **Authors:**
-- **Georgy Kharitonov**, 10D grade
-- **Anna Vasilyeva**, 10D grade
+- **[Georgy Kharitonov](https://github.com/Ezhovnik)**, 10D grade
+- **[Anna Vasilyeva](https://github.com/179Ann)**, 10D grade
 
 ## 📁 Repository Structure
 ```
