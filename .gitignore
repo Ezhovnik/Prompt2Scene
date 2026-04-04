@@ -1,2 +1,6 @@
 .venv
 english_data.csv
+manim_finetune/utils/__pycache__
+manim_finetune/__pycache__
+tune_model_english_qwen_coder.zip
+media
