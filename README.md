@@ -1,7 +1,7 @@
 # Prompt2Scene: Генерация Manim-анимации по текстовому описанию
 
 Этот репозиторий содержит доработанную (fine-tuned) версию **[Qwen2.5-Coder-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct)**, которая преобразует текстовые описания в исполняемый код **Manim**.  
-Модель дообучена на наборе данных `english_data12.csv`, который был создан путём объединения двух наборов из открытых источников (один с [Hugging Face](https://huggingface.co/datasets/shekhar98/manim_community_and_documentation_code), другой с [Kaggle](https://www.kaggle.com/datasets/ravidussilva/manim-sft/data)) и дополнен вручную дополнительными примерами.
+Модель дообучена на наборе данных, который был создан путём объединения двух наборов из открытых источников (один с [Hugging Face](https://huggingface.co/datasets/shekhar98/manim_community_and_documentation_code), другой с [Kaggle](https://www.kaggle.com/datasets/ravidussilva/manim-sft/data)) и дополнен вручную дополнительными примерами.
 
 ## 👥 Команда проекта
 
@@ -14,9 +14,19 @@
 ## 📁 Структура репозитория
 ```
 ├── README.md # Этот файл
-├── Notebook.ipynb # Jupyter-блокнот
-├── english_data12.csv # Данные для дообучения (пары «запрос → код»)
-└── tune_model_english_qwen_coder.zip # Готовая дообученная модель (распакуйте для использования)
+├── manim.ipynb # Jupyter-блокнот с основной логикой дообучения
+├── manim_launch.ipynb # Jupyter-блокнот, в котором можно протестировать manim-код
+├── .gitignore
+└── manim_finetune
+    ├── __init__.py
+    ├── constants.py # Основные константы: названия файлов, значения переменных, имя модели и т.д.
+    └── utils
+        ├── __init__.py
+        ├── archive_utils.py # Функции для работы с архивами
+        ├── data_utils.py # Функции для обработки данных
+        ├── eval_utils.py # Функции для оценки модели
+        ├── manim_test.py # Файл с функцией, тестирующей manim-код на наличие RE
+        └── model_utils.py # Функции, помогающие при дообучении
 ```
 
 ---
@@ -24,7 +34,7 @@
 # Prompt2Scene: Generate Manim Animations from Natural Language
 
 This repository contains a fine-tuned version of **[Qwen2.5-Coder-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct)** that converts textual descriptions into executable **Manim** code.  
-The model is fine-tuned on `english_data12.csv`, a dataset constructed by merging two public sources (one from [Hugging Face](https://huggingface.co/datasets/shekhar98/manim_community_and_documentation_code), one from [Kaggle](https://www.kaggle.com/datasets/ravidussilva/manim-sft/data)) and manually extending with additional examples.
+The model is fine-tuned on a dataset that was created by combining two datasets from open sources (one from [Hugging Face](https://huggingface.co/datasets/shekhar98/manim_community_and_documentation_code), one from [Kaggle](https://www.kaggle.com/datasets/ravidussilva/manim-sft/data)) and manually extending with additional examples.
 
 ## 👥 Project Team
 
@@ -37,7 +47,17 @@ This project was developed as part of a **project-based learning activity** at *
 ## 📁 Repository Structure
 ```
 ├── README.md # This file
-├── Notebook.ipynb # Jupyter notebook
-├── english_data12.csv # Training data (prompt → code pairs)
-└── tune_model_english_qwen_coder.zip # Fine-tuned model (unzip to use)
+├── manim.ipynb # Jupyter notebook with basic fine-tuning logic
+├── manim_launch.ipynb # A Jupyter notebook where you can test manim code
+├── .gitignore
+└── manim_finetune
+    ├── __init__.py
+    ├── constants.py # Basic constants: file names, variable values, model name, etc.
+    └── utils
+        ├── __init__.py
+        ├── archive_utils.py # Functions for working with archives
+        ├── data_utils.py # Functions for data processing
+        ├── eval_utils.py # Functions for evaluating the model
+        ├── manim_test.py # A file with a function that tests the manim code for RE
+        └── model_utils.py # Functions that help with fine tuning
 ```
