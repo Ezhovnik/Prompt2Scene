@@ -8,11 +8,13 @@
 Этот проект был выполнен в рамках **проектной деятельности** в **Школе № 179 г. Москвы**.
 
 **Авторы:**
+
 - **[Георгий Харитонов](https://github.com/Ezhovnik)**, 10Д класс
 - **[Анна Васильева](https://github.com/179Ann)**, 10Д класс
 
 ## 📁 Структура репозитория
-```
+
+```plaintext
 ├── README.md # Этот файл
 ├── manim.ipynb # Jupyter-блокнот с основной логикой дообучения
 ├── manim_launch.ipynb # Jupyter-блокнот, в котором можно протестировать manim-код
@@ -20,13 +22,16 @@
 └── manim_finetune
     ├── __init__.py
     ├── constants.py # Основные константы: названия файлов, значения переменных, имя модели и т.д.
+    ├── config.py # API-ключи (по понятным причинам на GitHub не попал)
     └── utils
         ├── __init__.py
         ├── archive_utils.py # Функции для работы с архивами
         ├── data_utils.py # Функции для обработки данных
         ├── eval_utils.py # Функции для оценки модели
         ├── manim_test.py # Файл с функцией, тестирующей manim-код на наличие RE
-        └── model_utils.py # Функции, помогающие при дообучении
+        ├── model_utils.py # Функции, помогающие при дообучении
+        ├── gemini_utils.py # Функции, помогающие при работе с Gemini
+        └── rl_utils.py # Функции для обучения с подкреплением
 ```
 
 ---
@@ -41,11 +46,13 @@ The model is fine-tuned on a dataset that was created by combining two datasets 
 This project was developed as part of a **project-based learning activity** at **Moscow School No. 179**.
 
 **Authors:**
+
 - **[Georgy Kharitonov](https://github.com/Ezhovnik)**, 10D grade
 - **[Anna Vasilyeva](https://github.com/179Ann)**, 10D grade
 
 ## 📁 Repository Structure
-```
+
+```plaintext
 ├── README.md # This file
 ├── manim.ipynb # Jupyter notebook with basic fine-tuning logic
 ├── manim_launch.ipynb # A Jupyter notebook where you can test manim code
@@ -53,11 +60,14 @@ This project was developed as part of a **project-based learning activity** at *
 └── manim_finetune
     ├── __init__.py
     ├── constants.py # Basic constants: file names, variable values, model name, etc.
+    ├── config.py # API keys (for obvious reasons, didn't make it to GitHub)
     └── utils
         ├── __init__.py
         ├── archive_utils.py # Functions for working with archives
         ├── data_utils.py # Functions for data processing
         ├── eval_utils.py # Functions for evaluating the model
         ├── manim_test.py # A file with a function that tests the manim code for RE
-        └── model_utils.py # Functions that help with fine tuning
+        ├── model_utils.py # Functions that help with fine tuning
+        ├── gemini_utils.py # Functions that help when working with Gemini
+        └── rl_utils.py # Functions for reinforcement learning
 ```
