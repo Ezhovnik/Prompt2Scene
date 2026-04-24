@@ -31,7 +31,7 @@ def evaluate_model(model, tokenizer, df: pd.DataFrame, n_samples: int = 100, tem
     for idx, row in random_samples.iterrows():
         torch.cuda.empty_cache()
         code = run_inference(model, tokenizer, row['prompt'], temperature, max_new_tokens, repetition_penalty)
-        if not manim_test(idx, code, log_file):
+        if not manim_test(code, log_file, idx):
             failed.append(idx)
     accuracy = (n_samples - len(failed)) / n_samples
     return accuracy, failed

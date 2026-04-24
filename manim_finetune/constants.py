@@ -1,6 +1,7 @@
 # Download data
-DATASET_ID = "1gb8S-8xharo5YYTOczAB_6YdOiQR_YCj"
-TUNE_MODEL_ID = "1TgsqiUSQ6k_Wuw0LR2On1r5j765DeHgZ"
+DATASET_DRIVE_ID = "1gb8S-8xharo5YYTOczAB_6YdOiQR_YCj"
+TUNE_MODEL_DRIVE_ID = "1TgsqiUSQ6k_Wuw0LR2On1r5j765DeHgZ"
+DPO_DATASET_DRIVE_ID = "1QfRb-1mLdppG1zOpNpzgSiue3jV3xl22"
 
 # Model
 MODEL_NAME = "Qwen/Qwen2.5-Coder-3B-Instruct"
@@ -27,6 +28,9 @@ TEST_SIZE = 0.2
 TEMPERATURE = 0.8
 REPETITION_PENALTY = 1.2
 MAX_NEW_TOKENS = 500
+
+# Gemini
+GEMINI_MODEL = "gemma-3-27b-it"
 
 # Paths
 OUTPUT_DIR = "./results"

@@ -4,7 +4,7 @@ import os
 import re
 import traceback
 
-def manim_test(idx: int, code_string: str, log_file: str = "manim_errors.log") -> bool:
+def manim_test(code_string: str, log_file: str = "manim_errors.log", idx: int = 0) -> bool:
     """
     Test if given manim code runs without errors.
     Returns True if successful, False otherwise.
