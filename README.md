@@ -22,7 +22,6 @@
 └── manim_finetune
     ├── __init__.py
     ├── constants.py # Основные константы: названия файлов, значения переменных, имя модели и т.д.
-    ├── config.py # API-ключи (по понятным причинам на GitHub не попал)
     └── utils
         ├── __init__.py
         ├── archive_utils.py # Функции для работы с архивами
@@ -60,7 +59,6 @@ This project was developed as part of a **project-based learning activity** at *
 └── manim_finetune
     ├── __init__.py
     ├── constants.py # Basic constants: file names, variable values, model name, etc.
-    ├── config.py # API keys (for obvious reasons, didn't make it to GitHub)
     └── utils
         ├── __init__.py
         ├── archive_utils.py # Functions for working with archives
