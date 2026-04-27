@@ -21,6 +21,8 @@ def test_and_score_candidates(prompt, candidates, gemini_client):
                 GEMINI_MODEL
             )
             scored.append((code, score))
+        else:
+            scored.append((code, -1))
     return scored
 
 def select_dpo_pair(prompt, scored_candidates):
@@ -32,7 +34,7 @@ def select_dpo_pair(prompt, scored_candidates):
     best_idx = scores.index(max(scores))
     worst_idx = scores.index(min(scores))
 
-    if scores[best_idx] > scores[worst_idx]:
+    if scores[best_idx] - 2 >= scores[worst_idx]:
         return {
             "prompt": prompt,
             "chosen": codes[best_idx],
