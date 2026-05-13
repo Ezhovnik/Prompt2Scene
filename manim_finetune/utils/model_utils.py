@@ -3,30 +3,25 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import LoraConfig, get_peft_model, TaskType
 from trl import SFTTrainer, SFTConfig, DataCollatorForCompletionOnlyLM
 
-def load_model_and_tokenizer(model_name: str, use_8bit: bool = True):
-    """Load base model with optional 8-bit quantization."""
-    if use_8bit:
-        bnb_config = BitsAndBytesConfig(
-            load_in_8bit=True,
-            llm_int8_enable_fp32_cpu_offload=True,
-        )
-    else:
-        bnb_config = None
+def load_model_and_tokenizer(model_name: str, bnb_config: BitsAndBytesConfig = None):
+    """Load model"""
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         quantization_config=bnb_config,
         device_map="auto",
+        low_cpu_mem_usage=True
     )
     return tokenizer, model
 
-def apply_lora(model, r: int = 6, alpha: int = 12):
+def apply_lora(model, r: int = 6, alpha: int = 12, target_modules = None):
     """Wrap model with LoRA adapters."""
     peft_config = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
         r=r,
         lora_alpha=alpha,
+        target_modules = target_modules
     )
     return get_peft_model(model, peft_config)
 

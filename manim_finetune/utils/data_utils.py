@@ -1,6 +1,7 @@
 import pandas as pd
 import gdown
 from datasets import Dataset
+import constants
 
 def download_data(file_id: str, output_name: str):
     """Download CSV from Google Drive."""
@@ -15,7 +16,7 @@ def format_instruction(sample: dict) -> dict:
     """Format a single sample into the chat template string."""
     text = (
         "<|im_start|>system\n"
-        "Write ONLY the code (without text explanations and comments) using the manim library for Python, which corresponds to the user's request."
+        f"{constants.SYSTEM_MSG}"
         "<|im_end|>\n"
         "<|im_start|>user\n"
         f"{sample['prompt']}"

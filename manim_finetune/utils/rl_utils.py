@@ -1,7 +1,10 @@
+from trl import DPOConfig, DPOTrainer
+from datasets import Dataset
+
 from manim_finetune.utils import eval_utils
 from manim_finetune.utils import gemini_utils
 from manim_finetune.utils import manim_test_utils
-from manim_finetune.constants import GEMINI_MODEL
+from manim_finetune.constants import GEMINI_MODEL, SYSTEM_MSG
 
 def generate_candidates(prompt, model, tokenizer, num_candidates, temperature):
     candidates = []
@@ -58,3 +61,30 @@ def process_step(prompt: str, model, tokenizer, gemini_client, num_candidates: i
         gemini_client
     )
     return select_dpo_pair(prompt, scored)
+
+def format_dpo_string(src: dict, tokenizer) -> dict:
+    prompt_messages = [
+        {"role": "system", "content": SYSTEM_MSG},
+        {"role": "user", "content": src["prompt"]}
+    ]
+
+    prompt_str = tokenizer.apply_chat_template(
+        prompt_messages,
+        tokenize=False,
+        add_generation_prompt=True
+    )
+
+    return {
+        "prompt": prompt_str,
+        "chosen": prompt_str + src["chosen"],
+        "rejected": prompt_str + src["rejected"],
+    }
+
+def create_dpo_trainer(model, tokenizer, training_args: DPOConfig, train_dataset: Dataset) -> DPOTrainer:
+    return DPOTrainer(
+        model=model,
+        ref_model=None,
+        args=training_args,
+        train_dataset=train_dataset,
+        processing_class=tokenizer
+    )

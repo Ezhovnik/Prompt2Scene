@@ -2,11 +2,12 @@
 import torch
 import pandas as pd
 from .manim_test_utils import manim_test
+import constants
 
 def run_inference(model, tokenizer, prompt: str, temperature: float = 0.8, max_new_tokens: int = 500, repetition_penalty: float = 1.2) -> str:
     """Generate code from a prompt using the model."""
     messages = [
-        {"role": "system", "content": "Write ONLY the code (without text explanations and comments) using the manim library for Python, which corresponds to the user's request."},
+        {"role": "system", "content": constants.SYSTEM_MSG},
         {"role": "user", "content": prompt}
     ]
     text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)

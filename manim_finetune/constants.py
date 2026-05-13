@@ -9,6 +9,8 @@ MODEL_NAME = "Qwen/Qwen2.5-Coder-3B-Instruct"
 # LoRA params
 LORA_R = 6
 LORA_ALPHA = 12
+DPO_LORA_R = 6
+DPO_LORA_ALPHA = 12
 
 # Training
 EPOCHS = 7
@@ -16,10 +18,12 @@ BATCH_SIZE = 1
 GRAD_ACCUM_STEPS = 8
 LEARNING_RATE = 2e-4
 MAX_LENGTH = 1024
-EVAL_STEPS = 50
-LOGGING_STEPS = 50
-SAVE_STEPS = 250
-SAVE_TOTAL_LIMIT = 5
+DPO_EPOCHS = 5
+DPO_BATCH_SIZE = 1
+DPO_GRAD_ACCUM_STEPS = 8
+DPO_LEARNING_RATE = 5e-5
+DPO_BETA = 0.3
+DPO_MAX_LENGTH = 2048
 
 # Dataset
 TEST_SIZE = 0.2
@@ -34,5 +38,10 @@ GEMINI_MODEL = "gemma-3-27b-it"
 
 # Paths
 OUTPUT_DIR = "./results"
+DPO_OUTPUT_DIR = "./dpo_results"
 SAVE_MODEL_PATH = "./tune_model_english_qwen_coder"
+DPO_SAVE_MODEL_PATH = "./dpo_model_english_qwen_coder"
 ZIP_NAME = "tune_model_english_qwen_coder"
+DPO_ZIP_NAME = "dpo_model_english_qwen_coder"
+
+SYSTEM_MSG = "Write ONLY the code (without text explanations and comments) using the manim library for Python, which corresponds to the user's request."
