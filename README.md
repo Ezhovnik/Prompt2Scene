@@ -28,6 +28,7 @@
         ├── data_utils.py # Функции для обработки данных
         ├── eval_utils.py # Функции для оценки модели
         ├── manim_test.py # Файл с функцией, тестирующей manim-код на наличие RE
+        ├── manim_utils.py # Функции для удобной работы с manim
         ├── model_utils.py # Функции, помогающие при дообучении
         ├── gemini_utils.py # Функции, помогающие при работе с Gemini
         └── rl_utils.py # Функции для обучения с подкреплением
@@ -65,6 +66,7 @@ This project was developed as part of a **project-based learning activity** at *
         ├── data_utils.py # Functions for data processing
         ├── eval_utils.py # Functions for evaluating the model
         ├── manim_test.py # A file with a function that tests the manim code for RE
+        ├── manim_utils.py # Functions for convenient operation with manim
         ├── model_utils.py # Functions that help with fine tuning
         ├── gemini_utils.py # Functions that help when working with Gemini
         └── rl_utils.py # Functions for reinforcement learning
