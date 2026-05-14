@@ -1,7 +1,7 @@
 # manim_finetune/eval_utils.py
 import torch
 import pandas as pd
-from .manim_test_utils import manim_test
+from manim_finetune.utils import manim_test_utils
 import constants
 
 def run_inference(model, tokenizer, prompt: str, temperature: float = 0.8, max_new_tokens: int = 500, repetition_penalty: float = 1.2) -> str:
@@ -20,7 +20,15 @@ def run_inference(model, tokenizer, prompt: str, temperature: float = 0.8, max_n
     )
     generated_tokens = outputs[0][inputs['input_ids'].shape[1]:]
     code = tokenizer.decode(generated_tokens, skip_special_tokens=True)
-    return code
+
+    clean_code = code
+    start_index = code.find("```python")
+    if start_index != -1:
+        start = start_index + len("```python")
+        end = code.find("```", start)
+        if end != -1:
+            clean_code = code[start:end].strip()
+    return clean_code
 
 def evaluate_model(model, tokenizer, df: pd.DataFrame, n_samples: int = 100, temperature: float = 0.8, max_new_tokens: int = 500, repetition_penalty: float = 1.2, log_file: str = "manim_errors.log", seed: int = 42):
     """
@@ -32,7 +40,7 @@ def evaluate_model(model, tokenizer, df: pd.DataFrame, n_samples: int = 100, tem
     for idx, row in random_samples.iterrows():
         torch.cuda.empty_cache()
         code = run_inference(model, tokenizer, row['prompt'], temperature, max_new_tokens, repetition_penalty)
-        if not manim_test(code, log_file, idx):
+        if not manim_test_utils.manim_test(code, log_file, idx):
             failed.append(idx)
     accuracy = (n_samples - len(failed)) / n_samples
     return accuracy, failed

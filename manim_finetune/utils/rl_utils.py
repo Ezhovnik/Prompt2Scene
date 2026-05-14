@@ -4,7 +4,7 @@ from datasets import Dataset
 from manim_finetune.utils import eval_utils
 from manim_finetune.utils import gemini_utils
 from manim_finetune.utils import manim_test_utils
-from manim_finetune.constants import GEMINI_MODEL, SYSTEM_MSG
+from manim_finetune import constants
 
 def generate_candidates(prompt, model, tokenizer, num_candidates, temperature):
     candidates = []
@@ -21,7 +21,7 @@ def test_and_score_candidates(prompt, candidates, gemini_client):
                 gemini_client,
                 prompt,
                 code,
-                GEMINI_MODEL
+                constants.GEMINI_MODEL
             )
             scored.append((code, score))
         else:
@@ -64,7 +64,7 @@ def process_step(prompt: str, model, tokenizer, gemini_client, num_candidates: i
 
 def format_dpo_string(src: dict, tokenizer) -> dict:
     prompt_messages = [
-        {"role": "system", "content": SYSTEM_MSG},
+        {"role": "system", "content": constants.SYSTEM_MSG},
         {"role": "user", "content": src["prompt"]}
     ]
 

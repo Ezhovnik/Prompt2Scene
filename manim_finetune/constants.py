@@ -34,7 +34,7 @@ REPETITION_PENALTY = 1.2
 MAX_NEW_TOKENS = 500
 
 # Gemini
-GEMINI_MODEL = "gemma-3-27b-it"
+GEMINI_MODEL = "gemma-4-26b-a4b-it"
 
 # Paths
 OUTPUT_DIR = "./results"
