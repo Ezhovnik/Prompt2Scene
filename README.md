@@ -1,6 +1,6 @@
 # Prompt2Scene: Генерация Manim-анимации по текстовому описанию
 
-Этот репозиторий содержит доработанную (fine-tuned) версию **[Qwen2.5-Coder-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct)**, которая преобразует текстовые описания в исполняемый код **Manim**.  
+Этот репозиторий содержит доработанную (fine-tuned) версию **[Qwen2.5-Coder-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct)**, которая преобразует текстовые описания в исполняемый код **Manim**. После модель была дополнительно улучшена с помощью обучения с подкреплением методом Direct Preference Optimization (DPO).
 Модель дообучена на наборе данных, который был создан путём объединения двух наборов из открытых источников (один с [Hugging Face](https://huggingface.co/datasets/shekhar98/manim_community_and_documentation_code), другой с [Kaggle](https://www.kaggle.com/datasets/ravidussilva/manim-sft/data)) и дополнен вручную дополнительными примерами.
 
 ## 👥 Команда проекта
@@ -41,7 +41,7 @@
 
 # Prompt2Scene: Generate Manim Animations from Natural Language
 
-This repository contains a fine-tuned version of **[Qwen2.5-Coder-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct)** that converts textual descriptions into executable **Manim** code.  
+This repository contains a fine-tuned version of **[Qwen2.5-Coder-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct)** that converts textual descriptions into executable **Manim** code. Afterwards, the model was further improved using reinforcement learning with the Direct Preference Optimization (DPO) method.
 The model is fine-tuned on a dataset that was created by combining two datasets from open sources (one from [Hugging Face](https://huggingface.co/datasets/shekhar98/manim_community_and_documentation_code), one from [Kaggle](https://www.kaggle.com/datasets/ravidussilva/manim-sft/data)) and manually extending with additional examples.
 
 ## 👥 Project Team
