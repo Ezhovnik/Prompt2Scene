@@ -19,6 +19,9 @@
 ├── manim.ipynb # Jupyter-блокнот с основной логикой дообучения
 ├── manim_launch.ipynb # Jupyter-блокнот, в котором можно протестировать manim-код
 ├── .gitignore
+├── bot
+|   ├──__init__.py
+|   └── bot.py # Телеграм-бот
 └── manim_finetune
     ├── __init__.py
     ├── constants.py # Основные константы: названия файлов, значения переменных, имя модели и т.д.
@@ -57,6 +60,9 @@ This project was developed as part of a **project-based learning activity** at *
 ├── manim.ipynb # Jupyter notebook with basic fine-tuning logic
 ├── manim_launch.ipynb # A Jupyter notebook where you can test manim code
 ├── .gitignore
+├── bot
+|   ├──__init__.py
+|   └── bot.py # Telegram bot
 └── manim_finetune
     ├── __init__.py
     ├── constants.py # Basic constants: file names, variable values, model name, etc.
