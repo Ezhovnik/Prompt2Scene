@@ -6,3 +6,4 @@ tune_model_english_qwen_coder.zip
 media
 manim_finetune/config.py
 dpo_preferences.csv
+bot/token.txt
