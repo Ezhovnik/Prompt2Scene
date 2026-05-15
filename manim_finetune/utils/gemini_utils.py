@@ -44,7 +44,7 @@ def evaluate_code_with_gemini(gemini_client: genai.Client, prompt: str, code: st
             return min(10.0, max(0.0, score))
         else:
             print(f"Failed to parse the number from the response: {answer}")
-            return 5.0
+            return None
     except Exception as e:
         print(f"Error when calling Gemma: {e}")
-        return 5.0
+        return None

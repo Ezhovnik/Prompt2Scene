@@ -2,6 +2,7 @@
 DATASET_DRIVE_ID = "1gb8S-8xharo5YYTOczAB_6YdOiQR_YCj"
 TUNE_MODEL_DRIVE_ID = "1TgsqiUSQ6k_Wuw0LR2On1r5j765DeHgZ"
 DPO_DATASET_DRIVE_ID = "1QfRb-1mLdppG1zOpNpzgSiue3jV3xl22"
+DPO_MODEL_DRIVE_ID = ""
 
 # Model
 MODEL_NAME = "Qwen/Qwen2.5-Coder-3B-Instruct"
