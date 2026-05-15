@@ -5,6 +5,7 @@ import tempfile
 import glob
 import shutil
 from typing import Tuple, Optional
+import uuid
 
 def manim_render(
         code_string: str,
@@ -68,7 +69,8 @@ def manim_render(
 
             if mp4_files:
                 src = mp4_files[0]
-                dst = os.path.join(output_dir, f"{class_name}.mp4")
+                unique_suffix = uuid.uuid4().hex[:8]
+                dst = os.path.join(output_dir, f"{class_name}_{unique_suffix}.mp4")
                 shutil.move(src, dst)
                 return True, dst
             else:
